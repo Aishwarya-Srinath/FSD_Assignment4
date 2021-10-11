@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>String & Number</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var str = prompt("Enter the word or the number here:","");
+        if(isNaN(str))
+        {
+            str = str.toUpperCase();
+            for(var a=0;a<str.length;a++) {
+                var chr = str.charAt(a);
+                if(chr == 'A'||chr == 'E'||chr == 'I'||chr == 'O'||chr == 'U')
+                break;
+            }
+            if(a<str.length)
+            alert("The position of the string of the left-most VOWEL is "+(a+1));
+            else
+            alert("We could not find the VOWEL in the given string!!");
+        }
+        else
+        {
+            var no, rem, rev=0;
+            no = parseInt(str);
+            while(no!=0) {
+                rem = no%10;
+                no = parseInt(no/10);
+                rev = rev * 10 + rem;
+            }
+            alert("The Number You entered, " + str + " is reversed to " + rev );
+        }
+        </script>
+    </body>
+</html>
